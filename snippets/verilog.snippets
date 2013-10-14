@@ -19,6 +19,7 @@ endsnippet
 snippet a
 always @(${1:/* condition, ex: A or B */})
 begin
+	${2:/* do something */})
 end
 endsnippet
 
@@ -78,10 +79,11 @@ endsnippet
 
 snippet c "case .. (case)"
 case (${1:/* condition */})
-	${2:/* condition1 */};
-	${3:/* condition2 */};
+	${2:/* condition1 */}: ${3:/* do something */};
+	${4:/* condition2 */}: ${4:/* do something */};
 	default:
 	begin
+		${5:/* do something */};
 	end
 endcase
 endsnippet
