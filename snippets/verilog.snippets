@@ -1,0 +1,87 @@
+snippet m
+module ${1:MODULE_NAME};
+
+endmodule
+endsnippet
+
+snippet i
+input ${1:INPUT_NAME};
+endsnippet
+
+snippet o
+onput ${1:ONPUT_NAME};
+endsnippet
+
+snippet r
+reg ${1:REG_NAME};
+endsnippet
+
+snippet a
+always @(${1:/* condition, ex: A or B */})
+begin
+end
+endsnippet
+
+snippet if "if .. (if)"
+if (${1:/* condition */})
+    ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+endsnippet
+
+snippet ifb "if begin .. (if begin)"
+if (${1:/* condition */})
+begin
+    ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+end
+endsnippet
+
+snippet el "else .. (else)"
+else
+	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+endsnippet
+
+snippet elb "else begin .. (else begin)"
+else
+begin
+	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+end
+endsnippet
+
+snippet ife "if .. else (ife)"
+if (${1:/* condition */})
+	${2:/* code */}
+else
+	${3:/* else */}
+endsnippet
+
+snippet ifeb "if .. else (ife)"
+if (${1:/* condition */})
+begin
+	${2:/* code */}
+end
+else
+begin
+	${3:/* else */}
+end
+endsnippet
+
+snippet elf "else if .. (else if)"
+else if (${1:/* condition */})
+	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+endsnippet
+
+snippet elfb "else if .. (else if)"
+else if (${1:/* condition */})
+begin
+	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+end
+endsnippet
+
+snippet c "case .. (case)"
+case (${1:/* condition */})
+	${2:/* condition1 */};
+	${3:/* condition2 */};
+	default:
+	begin
+	end
+endcase
+endsnippet
